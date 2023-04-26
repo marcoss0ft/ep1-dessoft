@@ -1,2 +1,3 @@
 print ("Lucca Nicoletti")
-Primeiro commit do Lucca Nicoletti
+
+print("Esse é o primeiro commit do lucca Nicoletti")
