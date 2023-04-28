@@ -7,5 +7,3 @@ def define_posicoes(linha, coluna, orientacao, tamanho):
         for i in range(tamanho):
             posicoes.append([linha, coluna+i])
     return posicoes
-
-lucca viado
