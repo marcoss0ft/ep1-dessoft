@@ -5,5 +5,3 @@ def posiciona_frota(frota):
             for linha, coluna in posicao:
                 grid[linha][coluna] = 1
     return grid
-
-'vdwnvrngrin'
