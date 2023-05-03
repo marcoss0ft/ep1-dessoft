@@ -1,13 +1,3 @@
-def define_posicoes(linha, coluna, orientacao, tamanho):
-    posicoes = []
-    if orientacao == "vertical":
-        for i in range(tamanho):
-            posicoes.append([linha+i, coluna])
-    elif orientacao == "horizontal":
-        for i in range(tamanho):
-            posicoes.append([linha, coluna+i])
-    return posicoes
-
 def posicao_valida(frota, linha, coluna, orientacao, tamanho):
     posicoes_navio = define_posicoes(linha, coluna, orientacao, tamanho)
 
