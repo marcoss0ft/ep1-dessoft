@@ -7,4 +7,5 @@ for navio in navios:
     for n in range (quantidades[i]):
         linha = int(input('\nQual linha?\n'))
         coluna = int(input('\nQual coluna?\n'))
-        orientacao = int(input('\nQual orientacao?\n'))
+        if navio != 'submarino':
+            orientacao = int(input('\nQual orientacao?\n'))
