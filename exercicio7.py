@@ -51,7 +51,11 @@ for navio in navios:
             linha = int(input('\nQual linha?\n'))
             coluna = int(input('\nQual coluna?\n'))
             if navio != 'submarino':
-                orientacao = input('\nQual orientacao?\n')
+                orientacao = int(input('\nQual orientacao?\n'))
+                if orientacao == 1:
+                    orientacao = 'vertical'
+                elif orientacao == 2:
+                    orientacao = 'horizontal'
             else:
                 orientacao = 'vertical'
             validacao = posicao_valida(frota,linha,coluna,orientacao,tamanho)
