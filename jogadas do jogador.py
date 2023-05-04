@@ -111,3 +111,7 @@ tabuleiro_jogador = posiciona_frota(frota)
 
 jogando = True
 while jogando:
+    tabuleiros = monta_tabuleiros(tabuleiro_jogador,tabuleiro_oponente)
+    print(tabuleiros)
+    valida = True
+    
