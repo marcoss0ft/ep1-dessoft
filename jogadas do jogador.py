@@ -64,6 +64,19 @@ def faz_jogada(tabuleiro, linha, coluna):
         tabuleiro[linha][coluna] = '-'
     return tabuleiro
 
+def afundados(frota,tabuleiro):
+    afundados = 0
+    for embarcacoes in frota:
+        for embarcacao in frota[embarcacoes]:
+            i = 0
+            for posicao in embarcacao:
+                if not tabuleiro[posicao[0]][posicao[1]] == 'X':
+                    break
+                i += 1
+            if i == len(embarcacao):
+                afundados += 1
+    return afundados
+
 #Cria tabuleiros
 
 frota_oponente = {
@@ -126,7 +139,7 @@ while jogando:
         valida_linha = True
         while valida_linha:
             linha_atacada  = int(input('Jogador, qual linha deseja atacar?'))
-            if 0 <= linha_atacada:
+            if 0 <= linha_atacada <= 9:
                 valida_linha = False
             else:
                 print('Linha inválida!')
@@ -143,4 +156,8 @@ while jogando:
             verifica_posicao_inedita = False
         else:
             print('A posição linha {0} e coluna {1} já foi informada anteriormente!'.format(linha_atacada,coluna_atacada))
-        
+    tabuleiro_oponente = faz_jogada(tabuleiro_oponente,linha_atacada,coluna_atacada)
+    qte_afundados_oponente = afundados(frota_oponente,tabuleiro_oponente)
+    if qte_afundados_oponente == 10:
+        print('Parabéns! Você derrubou todos os navios do seu oponente!')
+        jogando = False
