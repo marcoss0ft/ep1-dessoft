@@ -1,7 +1,7 @@
 navios = {'porta-aviões':[1,4],'navio-tanque':[2,3],'contratorpedeiro':[3,2],'submarino':[4,1]}
 i = 0
 frota = {}
-
+orientacoes = ['vertical','horizontal']
 def define_posicoes(linha, coluna, orientacao, tamanho):
     posicoes = []
     if orientacao == "vertical":
@@ -55,7 +55,7 @@ for navio in navios:
             else:
                 orientacao = 'vertical'
             validacao = posicao_valida(frota,linha,coluna,orientacao,tamanho)
-            if validacao == True:
+            if validacao == True and orientacao in orientacoes:
                 frota = preenche_frota(frota,navio,linha,coluna,orientacao,tamanho)
                 verificando = False
             else:
