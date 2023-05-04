@@ -57,6 +57,13 @@ def monta_tabuleiros(tabuleiro_jogador, tabuleiro_oponente):
         texto += f'{linha}| {jogador_info}|     {linha}| {oponente_info}|\n'
     return texto
 
+def faz_jogada(tabuleiro, linha, coluna):
+    if tabuleiro[linha][coluna] == 1:
+        tabuleiro[linha][coluna] = 'X'
+    else:
+        tabuleiro[linha][coluna] = '-'
+    return tabuleiro
+
 #Cria tabuleiros
 
 frota_oponente = {
@@ -113,6 +120,7 @@ jogando = True
 while jogando:
     tabuleiros = monta_tabuleiros(tabuleiro_jogador,tabuleiro_oponente)
     print(tabuleiros)
+    lista_posicoes_escolhidas = []
     verifica_posicao_inedita = True
     while verifica_posicao_inedita:
         valida_linha = True
@@ -129,3 +137,10 @@ while jogando:
                 valida_coluna = False
             else:
                 print('Coluna inválida!')
+        posicao_escolhida = [linha_atacada,coluna_atacada]
+        if posicao_escolhida not in lista_posicoes_escolhidas:
+            lista_posicoes_escolhidas.append(posicao_escolhida)
+            verifica_posicao_inedita = False
+        else:
+            print('A posição linha {0} e coluna {1} já foi informada anteriormente!'.format(linha_atacada,coluna_atacada))
+        
