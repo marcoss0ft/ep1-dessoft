@@ -46,9 +46,9 @@ for navio in navios:
     quantidade = navios[navio][0]
     tamanho = navios[navio][1]
     for n in range (quantidade):
-        print('\nInsira as informações referentes ao navio {0} que possui tamanho {1}\n'.format(navio,tamanho))
         verificando = True
         while verificando:
+            print('\nInsira as informações referentes ao navio {0} que possui tamanho {1}\n'.format(navio,tamanho))
             linha = int(input('\nQual linha?\n'))
             coluna = int(input('\nQual coluna?\n'))
             if navio != 'submarino':
