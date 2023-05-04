@@ -37,10 +37,8 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
     return True
 
 navios = {'porta-aviões':[1,4],'navio-tanque':[2,3],'contratorpedeiro':[3,2],'submarino':[4,1]}
-i = 0
 frota = {}
-orientacoes = ['vertical','horizontal']
-
+dic_orientacoes = {1:'vertical',2:'horizontal'}
 
 for navio in navios:
     quantidade = navios[navio][0]
@@ -48,23 +46,18 @@ for navio in navios:
     for n in range (quantidade):
         verificando = True
         while verificando:
-            print('\nInsira as informações referentes ao navio {0} que possui tamanho {1}\n'.format(navio,tamanho))
-            linha = int(input('\nQual linha?\n'))
-            coluna = int(input('\nQual coluna?\n'))
+            print('Insira as informações referentes ao navio {0} que possui tamanho {1}'.format(navio,tamanho))
+            linha = int(input('Linha:'))
+            coluna = int(input('Coluna:'))
             if navio != 'submarino':
-                orientacao = int(input('\n[1] Vertical [2] Horizontal >'))
-                if orientacao == 1:
-                    orientacao = 'vertical'
-                elif orientacao == 2:
-                    orientacao = 'horizontal'
-            else:
-                orientacao = 'vertical'
+                vertical_horizontal = int(input('[1] Vertical [2] Horizontal:'))
+                orientacao = dic_orientacoes[vertical_horizontal]
             validacao = posicao_valida(frota,linha,coluna,orientacao,tamanho)
-            if validacao == True and orientacao in orientacoes:
+            if validacao == True:
                 frota = preenche_frota(frota,navio,linha,coluna,orientacao,tamanho)
                 verificando = False
             else:
-                print('\nEsta posição não está válida!\n')
+                print('Esta posição não está válida!')
 
 
 print(frota)
