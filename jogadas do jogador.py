@@ -113,5 +113,17 @@ jogando = True
 while jogando:
     tabuleiros = monta_tabuleiros(tabuleiro_jogador,tabuleiro_oponente)
     print(tabuleiros)
-    valida = True
-    
+    valida_linha = True
+    while valida_linha:
+        linha_atacada  = int(input('Jogador, qual linha deseja atacar?'))
+        if 0 <= linha_atacada:
+            valida_linha = False
+        else:
+            print('Linha inválida!')
+    valida_coluna = True
+    while valida_coluna:
+        coluna_atacada = int(input('Jogador, qual coluna deseja atacar?'))
+        if 0 <= coluna_atacada <= 9:
+            valida_coluna = False
+        else:
+            print('Coluna inválida!')
