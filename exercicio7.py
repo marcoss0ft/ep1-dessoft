@@ -1,7 +1,3 @@
-navios = {'porta-aviões':[1,4],'navio-tanque':[2,3],'contratorpedeiro':[3,2],'submarino':[4,1]}
-i = 0
-frota = {}
-orientacoes = ['vertical','horizontal']
 def define_posicoes(linha, coluna, orientacao, tamanho):
     posicoes = []
     if orientacao == "vertical":
@@ -40,6 +36,11 @@ def posicao_valida(frota, linha, coluna, orientacao, tamanho):
     
     return True
 
+navios = {'porta-aviões':[1,4],'navio-tanque':[2,3],'contratorpedeiro':[3,2],'submarino':[4,1]}
+i = 0
+frota = {}
+orientacoes = ['vertical','horizontal']
+
 
 for navio in navios:
     quantidade = navios[navio][0]
@@ -51,7 +52,7 @@ for navio in navios:
             linha = int(input('\nQual linha?\n'))
             coluna = int(input('\nQual coluna?\n'))
             if navio != 'submarino':
-                orientacao = int(input('\nQual orientacao?\n'))
+                orientacao = int(input('\n[1] Vertical [2] Horizontal >'))
                 if orientacao == 1:
                     orientacao = 'vertical'
                 elif orientacao == 2:
