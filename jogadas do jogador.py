@@ -129,11 +129,12 @@ tabuleiro_jogador = posiciona_frota(frota)
 
 #jogo
 
+lista_posicoes_escolhidas = []
+
 jogando = True
 while jogando:
     tabuleiros = monta_tabuleiros(tabuleiro_jogador,tabuleiro_oponente)
     print(tabuleiros)
-    lista_posicoes_escolhidas = []
     verifica_posicao_inedita = True
     while verifica_posicao_inedita:
         valida_linha = True
