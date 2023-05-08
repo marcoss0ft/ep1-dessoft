@@ -1,5 +1,4 @@
 import random
-random.seed(2)
 
 #Funções
 
@@ -178,6 +177,6 @@ while jogando:
                 sorteando = False
         tabuleiro_jogador = faz_jogada(tabuleiro_jogador,linha_oponente,coluna_oponente)
         qte_afundados_jogador = afundados(frota,tabuleiro_jogador)
-        if qte_afundados_oponente == 10:
+        if qte_afundados_jogador == 10:
             print('Xi! O oponente derrubou toda a sua frota =(')
             jogando = False
