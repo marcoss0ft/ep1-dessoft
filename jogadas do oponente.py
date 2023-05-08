@@ -1,4 +1,5 @@
 import random
+random.seed(2)
 
 #Funções
 
@@ -172,6 +173,7 @@ while jogando:
             coluna_oponente = random.randint(0,9)
             posicao_oponente = [linha_oponente,coluna_oponente]
             if posicao_oponente not in lista_posicoes_oponente:
+                lista_posicoes_oponente.append(posicao_oponente)
                 print('Seu oponente está atacando na linha {0} e coluna {1}'.format(linha_oponente,coluna_oponente))
                 sorteando = False
         tabuleiro_jogador = faz_jogada(tabuleiro_jogador,linha_oponente,coluna_oponente)
